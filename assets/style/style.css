@@ -4,3 +4,7 @@
     height: 100vh;
     background-size: cover;
 }
+.imgSize {
+width: 100%;
+height: auto;
+}
