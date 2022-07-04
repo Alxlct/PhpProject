@@ -70,7 +70,8 @@ try {
 </head>
 
 <body class="bg-stadium">
-    <div class="row text-center justify-content-center p-0 m-0">
+
+    <div class="bg-stadium row text-center justify-content-center p-0 m-0">
         <div class="col-lg-9">
             <h1 class="text-center bg-light text-dark my-3 rounded shadow p-3 border border-dark">RsSport</h1>
         </div>
@@ -85,28 +86,28 @@ try {
                             <div class="carousel-item active">
                                 <img src="<?= $olympics->enclosure['url'] ?>" class="d-block w-100" alt="...">
                                 <p class="text-start"><b><?= $olympics->title ?></b></p>
-                    <p class="text-start"><?= strftime($date_format, strtotime($olympics->pubDate)) ?></p>
-                    <a href="<?= $olympics->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u></a>
+                                <p class="text-start"><?= strftime($date_format, strtotime($olympics->pubDate)) ?></p>
+                                <a href="<?= $olympics->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u></a>
 
                             </div>
                             <div class="carousel-item">
                                 <img src="<?= $combat->enclosure['url'] ?>" class="d-block w-100" alt="...">
                                 <p class="text-start"><b><?= $combat->title ?></b></p>
-                    <p class="text-start"><?= strftime($date_format, strtotime($combat->pubDate)) ?></p>
-                    <a href="<?= $combat->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u></a>
+                                <p class="text-start"><?= strftime($date_format, strtotime($combat->pubDate)) ?></p>
+                                <a href="<?= $combat->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u></a>
                             </div>
                             <div class="carousel-item">
                                 <img src="<?= $usSports->enclosure['url'] ?>" class="d-block w-100" alt="...">
                                 <p class="text-start"><b><?= $usSports->title ?></b></p>
                                 <p class="text-start"><?= strftime($date_format, strtotime($usSports->pubDate)) ?></p>
-                                <a href="<?= $usSports->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u></a>
+                                <a href="<?= $usSports->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u><a>
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <button class="carousel-control-prev arrow" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <button class="carousel-control-next arrow" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
