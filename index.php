@@ -1,2 +1,2 @@
-<?php
-header("Location : views/home.php/");
+<?php 
+Header("Location: views/home.php");

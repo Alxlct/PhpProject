@@ -1,0 +1,6 @@
+.bg-stadium {
+    background-image: url(../img/background.jpeg);
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+}
