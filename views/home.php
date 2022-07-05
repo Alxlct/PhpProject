@@ -1,4 +1,6 @@
 <?php
+$A = 6;
+
 $fluxRSS = "https://rmcsport.bfmtv.com/rss/jeux-olympiques/";
 
 function recupXML($url)
@@ -96,19 +98,68 @@ try {
                                 <a href="<?= $usSports->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u><a>
                             </div>
                         </div>
-                        <button class="carousel-control-prev arrow" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon bg-success" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next arrow" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <span class="carousel-control-next-icon bg-success" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
                 </div>
             </div>
+
+
+            <!-- @@@  ----------------------------------------------                              CARDS                                                @@@ -->
+
+
+
+
+
+
+
+            <div class="row m-0 p-0 justify-content-evenly">
+                <div class="col-lg-3 m-1 text-center">
+                    <?php
+                    for ($i = 1; $i < $A; $i++) { ?>
+                        <div class="rounded border border-secondary my-3">
+                            <img src="<?= $olympics[$i]->enclosure['url'] ?>" alt="<?= $olympics[$i]->enclosure['url'] ?>" class="imgSize my-2">
+                            <p class="text-start px-1"><b><?= $olympics[$i]->title ?></b></p>
+                            <p class="text-start px-1"><?= strftime($date_format, strtotime($olympics[$i]->pubDate)) ?></p>
+                            <a href="<?php echo $olympics[$i]->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u></a>
+                        </div>
+                    <?php } ?>
+                </div>
+
+                <div class="col-lg-3 m-1 text-center">
+                    <?php
+                    for ($i = 1; $i < $A; $i++) { ?>
+                        <div class="rounded border border-secondary my-3">
+                            <img src="<?= $combat[$i]->enclosure['url'] ?>" alt="<?= $combat[$i]->enclosure['url'] ?>" class="imgSize my-2">
+                            <p class="text-start px-1"><b><?= $combat[$i]->title ?></b></p>
+                            <p class="text-start px-1"><?= strftime($date_format, strtotime($combat[$i]->pubDate)) ?></p>
+                            <a href="<?php echo $combat[$i]->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u></a>
+                        </div>
+                    <?php } ?>
+                </div>
+
+                <div class="col-lg-3 m-1 text-center">
+                    <?php
+                    for ($i = 1; $i < $A; $i++) { ?>
+                        <div class="rounded border border-secondary my-3">
+                            <img src="<?= $usSports[$i]->enclosure['url'] ?>" alt="<?= $usSports[$i]->enclosure['url'] ?>" class="imgSize my-2">
+                            <p class="text-start px-1"><b><?= $usSports[$i]->title ?></b></p>
+                            <p class="text-start px-1"><?= strftime($date_format, strtotime($usSports[$i]->pubDate)) ?></p>
+                            <a href="<?php echo $usSports[$i]->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u></a>
+                        </div>
+                    <?php } ?>
+
+                </div>
+            </div>
         </div>
     </div>
+
 
     <?php require_once "../elements/footer.php" ?>
     <!-- JavaScript Bundle with Popper -->
