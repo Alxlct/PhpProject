@@ -1,2 +1,2 @@
 <?php 
-Header("Location: views/home.php");
+Header("Location: views/parameters.php");

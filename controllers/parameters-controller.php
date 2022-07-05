@@ -4,10 +4,3 @@ $_SESSION["POST"] = $_POST;
 
 
 
-
-
-
-
-
-
-
