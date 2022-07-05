@@ -8,3 +8,9 @@
 width: 90%;
 height: auto;
 }
+.bg-Sports {
+    background: url(../img/bgsports.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}

@@ -72,9 +72,9 @@ try {
         </div>
     </div>
     <div class="row p-0 m-0 justify-content-center">
-        <div class="col-lg-11 col-10 bg-light shadow rounded border border-dark">
+        <div class="col-lg-11 col-10 bg-Sports shadow rounded border border-dark">
 
-            <div class="row justify-content-center text-center my-3">
+            <div class="row bg-light justify-content-center text-center my-3">
                 <div class="col-lg-8 justify-content-center text-center">
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
@@ -123,7 +123,7 @@ try {
                 <div class="col-lg-3 m-1 text-center">
                     <?php
                     for ($i = 1; $i < $A; $i++) { ?>
-                        <div class="rounded border border-secondary my-3">
+                        <div class="rounded border border-secondary my-3 bg-light">
                             <img src="<?= $olympics[$i]->enclosure['url'] ?>" alt="<?= $olympics[$i]->enclosure['url'] ?>" class="imgSize my-2">
                             <p class="text-start px-1"><b><?= $olympics[$i]->title ?></b></p>
                             <p class="text-start px-1"><?= strftime($date_format, strtotime($olympics[$i]->pubDate)) ?></p>
@@ -135,7 +135,7 @@ try {
                 <div class="col-lg-3 m-1 text-center">
                     <?php
                     for ($i = 1; $i < $A; $i++) { ?>
-                        <div class="rounded border border-secondary my-3">
+                        <div class="rounded border border-secondary bg-light my-3">
                             <img src="<?= $combat[$i]->enclosure['url'] ?>" alt="<?= $combat[$i]->enclosure['url'] ?>" class="imgSize my-2">
                             <p class="text-start px-1"><b><?= $combat[$i]->title ?></b></p>
                             <p class="text-start px-1"><?= strftime($date_format, strtotime($combat[$i]->pubDate)) ?></p>
@@ -147,7 +147,7 @@ try {
                 <div class="col-lg-3 m-1 text-center">
                     <?php
                     for ($i = 1; $i < $A; $i++) { ?>
-                        <div class="rounded border border-secondary my-3">
+                        <div class="rounded border border-secondary bg-light my-3">
                             <img src="<?= $usSports[$i]->enclosure['url'] ?>" alt="<?= $usSports[$i]->enclosure['url'] ?>" class="imgSize my-2">
                             <p class="text-start px-1"><b><?= $usSports[$i]->title ?></b></p>
                             <p class="text-start px-1"><?= strftime($date_format, strtotime($usSports[$i]->pubDate)) ?></p>
