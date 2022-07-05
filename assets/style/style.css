@@ -14,3 +14,14 @@ height: auto;
     background-size: cover;
     background-attachment: fixed;
 }
+#scroll_to_top {
+    position: fixed;
+    width: 50px;
+    height: 110px;
+    bottom: 10px;
+    right: 30px;
+    left: 100px;
+  }
+  #scroll_to_top img {
+    width: 50px;
+  }

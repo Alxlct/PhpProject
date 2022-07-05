@@ -29,7 +29,7 @@ if (isset($_GET["flux"])) {
 
 
 <?php
-for ($i = 1; $i < $A; $i++) { ?>
+for ($i = 1; $i <= 20; $i++) { ?>
     <div class="rounded border border-secondary my-3 bg-light">
         <img src="<?= $flux[$i]->enclosure['url'] ?>" alt="<?= $flux[$i]->enclosure['url'] ?>" class="imgSize my-2">
         <p class="text-start px-1"><b><?= $flux[$i]->title ?></b></p>
