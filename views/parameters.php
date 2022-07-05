@@ -1,8 +1,9 @@
 <?php
 
 session_start();
-
 var_dump($_SESSION);
+var_dump($_POST);
+
 require_once '../controllers/parameters-controller.php';
 ?>
 
@@ -53,19 +54,19 @@ require_once '../controllers/parameters-controller.php';
 
             <div class="col-lg-2 m-3 border border-dark">
                 <div class="form-check">
-                    <input class="form-check-input myChecklist" type="checkbox" value="6" id="num1" name="list[]">
+                    <input class="form-check-input " type="radio" value="6" id="num1" name="articles">
                     <label class="form-check-label" for="num1">
                         6
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input myChecklist" type="checkbox" value="9" id="num2" name="list[]">
+                    <input class="form-check-input " type="radio" value="9" id="num2" name="articles">
                     <label class="form-check-label" for="num2">
                         9
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input myChecklist" type="checkbox" value="12" id="num3" name="list[]">
+                    <input class="form-check-input " type="radio" value="12" id="num3" name="articles">
                     <label class="form-check-label" for="num3">
                         12
                     </label>
@@ -102,19 +103,6 @@ require_once '../controllers/parameters-controller.php';
             });
         });
 
-        const allChecklist = document.querySelectorAll(".myChecklist");
-
-        allChecklist.forEach((element) => {
-            element.addEventListener("change", function() {
-                let onlyCheckedlist = document.querySelectorAll(
-                    ".myChecklist:checked"
-                );
-                //   Nous avons définit le nombre max de checkbox à 3
-                if (onlyCheckedlist.length > 1) {
-                    this.checked = false;
-                }
-            });
-        });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>

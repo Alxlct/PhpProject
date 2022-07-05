@@ -20,20 +20,20 @@ if((!empty($_SESSION["POST"]['cat'])) && (count($_SESSION["POST"]['cat'])>0)) {
 else {
   ?>
         <li class="nav-item ms-4">
-          <a class="nav-link " href="#">theme 1</a>
+          <a class="nav-link " href="#">Jeux olympiques</a>
         </li>
         <li class="nav-item ms-4">
-          <a class="nav-link" href="#">theme 2 </a>
+          <a class="nav-link" href="#">Sports de combat</a>
         </li>
         <li class="nav-item ms-4">
-          <a class="nav-link" href="#">theme 3 </a>
+          <a class="nav-link" href="#">Sport us</a>
         </li>
 
         <?php } ?>  
       </ul>
       <ul class="navbar-nav fs-3">
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bi bi-gear me-2 "></i>paramètres</a>
+          <a class="nav-link" href="parameters.php"><i class="bi bi-gear me-2 "></i>paramètres</a>
         </li>
       </ul>
     </div>
