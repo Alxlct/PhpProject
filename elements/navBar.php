@@ -20,13 +20,13 @@ if((!empty($_SESSION["POST"]['cat'])) && (count($_SESSION["POST"]['cat'])>0)) {
 else {
   ?>
         <li class="nav-item ms-4">
-          <a class="nav-link " href="#">theme 1</a>
+          <a class="nav-link " href="../phpfunction.php?flux=0">theme 1</a>
         </li>
         <li class="nav-item ms-4">
-          <a class="nav-link" href="#">theme 2 </a>
+          <a class="nav-link" href="../phpfunction.php?flux=1">theme 2 </a>
         </li>
         <li class="nav-item ms-4">
-          <a class="nav-link" href="#">theme 3 </a>
+          <a class="nav-link" href="../phpfunction.php?flux=2">theme 3 </a>
         </li>
 
         <?php } ?>  

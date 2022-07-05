@@ -1,65 +1,31 @@
 <?php
-
 session_start();
 
-var_dump($_SESSION);
-$A = 6;
+$date_format = '%A %d %B %Y à %H:%M';
+setlocale(LC_TIME, "fr_FR", "fra");
 
-$fluxRSS = "https://rmcsport.bfmtv.com/rss/jeux-olympiques/";
+$rssArray = [
+    "https://rmcsport.bfmtv.com/rss/jeux-olympiques/",
+    "https://rmcsport.bfmtv.com/rss/sports-de-combat//",
+    "https://rmcsport.bfmtv.com/rss/sport-us/",
+    "https://rmcsport.bfmtv.com/rss/handball/",
+    "https://rmcsport.bfmtv.com/rss/volley/"
+];
+
+$A = 6;
 
 function recupXML($url)
 {
     if (!@$rss = simplexml_load_file($url)) {
         throw new Exception('Flux introuvable');
     } else {
-        return $rss;
+        return $rss->channel->item;
     }
 }
-try {
-    $rss = recupXML($fluxRSS);
+$flux1 = recupXML($rssArray[0]);
+$flux2 = recupXML($rssArray[1]);
+$flux3 = recupXML($rssArray[2]);
 
-    $olympics = $rss->channel->item;
-} catch (Exception $e) {
-    echo $e->getMessage();
-}
-$date_format = '%A %d %B %Y à %H:%M';
-setlocale(LC_TIME, "fr_FR", "fra");
-
-$fluxRSS2 = "https://rmcsport.bfmtv.com/rss/sports-de-combat/";
-
-function recupXML2($url)
-{
-    if (!@$rss = simplexml_load_file($url)) {
-        throw new Exception('Flux introuvable');
-    } else {
-        return $rss;
-    }
-}
-try {
-    $rss = recupXML($fluxRSS2);
-
-    $combat = $rss->channel->item;
-} catch (Exception $e) {
-    echo $e->getMessage();
-}
-
-$fluxRSS3 = "https://rmcsport.bfmtv.com/rss/sport-us/";
-
-function recupXML3($url)
-{
-    if (!@$rss = simplexml_load_file($url)) {
-        throw new Exception('Flux introuvable');
-    } else {
-        return $rss;
-    }
-}
-try {
-    $rss = recupXML($fluxRSS3);
-
-    $usSports = $rss->channel->item;
-} catch (Exception $e) {
-    echo $e->getMessage();
-}
 ?>
 
 <?php require_once "../elements/meta.php"; ?>
@@ -83,23 +49,23 @@ try {
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="<?= $olympics->enclosure['url'] ?>" class="d-block w-100" alt="...">
-                                <p class="text-start"><b><?= $olympics->title ?></b></p>
-                                <p class="text-start"><?= strftime($date_format, strtotime($olympics->pubDate)) ?></p>
-                                <a href="<?= $olympics->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u></a>
+                                <img src="<?= $flux1->enclosure['url'] ?>" class="d-block w-100" alt="...">
+                                <p class="text-start"><b><?= $flux1->title ?></b></p>
+                                <p class="text-start"><?= strftime($date_format, strtotime($flux1->pubDate)) ?></p>
+                                <a href="<?= $flux1->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u></a>
 
                             </div>
                             <div class="carousel-item">
-                                <img src="<?= $combat->enclosure['url'] ?>" class="d-block w-100" alt="...">
-                                <p class="text-start"><b><?= $combat->title ?></b></p>
-                                <p class="text-start"><?= strftime($date_format, strtotime($combat->pubDate)) ?></p>
-                                <a href="<?= $combat->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u></a>
+                                <img src="<?= $flux2->enclosure['url'] ?>" class="d-block w-100" alt="...">
+                                <p class="text-start"><b><?= $flux2->title ?></b></p>
+                                <p class="text-start"><?= strftime($date_format, strtotime($flux2->pubDate)) ?></p>
+                                <a href="<?= $flux2->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u></a>
                             </div>
                             <div class="carousel-item">
-                                <img src="<?= $usSports->enclosure['url'] ?>" class="d-block w-100" alt="...">
-                                <p class="text-start"><b><?= $usSports->title ?></b></p>
-                                <p class="text-start"><?= strftime($date_format, strtotime($usSports->pubDate)) ?></p>
-                                <a href="<?= $usSports->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u><a>
+                                <img src="<?= $flux3->enclosure['url'] ?>" class="d-block w-100" alt="...">
+                                <p class="text-start"><b><?= $flux3->title ?></b></p>
+                                <p class="text-start"><?= strftime($date_format, strtotime($flux3->pubDate)) ?></p>
+                                <a href="<?= $flux3->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u><a>
                             </div>
                         </div>
                         <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -128,10 +94,10 @@ try {
                     <?php
                     for ($i = 1; $i < $A; $i++) { ?>
                         <div class="rounded border border-secondary my-3 bg-light">
-                            <img src="<?= $olympics[$i]->enclosure['url'] ?>" alt="<?= $olympics[$i]->enclosure['url'] ?>" class="imgSize my-2">
-                            <p class="text-start px-1"><b><?= $olympics[$i]->title ?></b></p>
-                            <p class="text-start px-1"><?= strftime($date_format, strtotime($olympics[$i]->pubDate)) ?></p>
-                            <a href="<?php echo $olympics[$i]->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u></a>
+                            <img src="<?= $flux1[$i]->enclosure['url'] ?>" alt="<?= $flux1[$i]->enclosure['url'] ?>" class="imgSize my-2">
+                            <p class="text-start px-1"><b><?= $flux1[$i]->title ?></b></p>
+                            <p class="text-start px-1"><?= strftime($date_format, strtotime($flux1[$i]->pubDate)) ?></p>
+                            <a href="<?= $flux1[$i]->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u></a>
                         </div>
                     <?php } ?>
                 </div>
@@ -140,10 +106,10 @@ try {
                     <?php
                     for ($i = 1; $i < $A; $i++) { ?>
                         <div class="rounded border border-secondary bg-light my-3">
-                            <img src="<?= $combat[$i]->enclosure['url'] ?>" alt="<?= $combat[$i]->enclosure['url'] ?>" class="imgSize my-2">
-                            <p class="text-start px-1"><b><?= $combat[$i]->title ?></b></p>
-                            <p class="text-start px-1"><?= strftime($date_format, strtotime($combat[$i]->pubDate)) ?></p>
-                            <a href="<?php echo $combat[$i]->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u></a>
+                            <img src="<?= $flux2[$i]->enclosure['url'] ?>" alt="<?= $flux2[$i]->enclosure['url'] ?>" class="imgSize my-2">
+                            <p class="text-start px-1"><b><?= $flux2[$i]->title ?></b></p>
+                            <p class="text-start px-1"><?= strftime($date_format, strtotime($flux2[$i]->pubDate)) ?></p>
+                            <a href="<?php echo $flux2[$i]->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u></a>
                         </div>
                     <?php } ?>
                 </div>
@@ -152,10 +118,10 @@ try {
                     <?php
                     for ($i = 1; $i < $A; $i++) { ?>
                         <div class="rounded border border-secondary bg-light my-3">
-                            <img src="<?= $usSports[$i]->enclosure['url'] ?>" alt="<?= $usSports[$i]->enclosure['url'] ?>" class="imgSize my-2">
-                            <p class="text-start px-1"><b><?= $usSports[$i]->title ?></b></p>
-                            <p class="text-start px-1"><?= strftime($date_format, strtotime($usSports[$i]->pubDate)) ?></p>
-                            <a href="<?php echo $usSports[$i]->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u></a>
+                            <img src="<?= $flux3[$i]->enclosure['url'] ?>" alt="<?= $flux3[$i]->enclosure['url'] ?>" class="imgSize my-2">
+                            <p class="text-start px-1"><b><?= $flux3[$i]->title ?></b></p>
+                            <p class="text-start px-1"><?= strftime($date_format, strtotime($flux3[$i]->pubDate)) ?></p>
+                            <a href="<?php echo $flux3[$i]->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u></a>
                         </div>
                     <?php } ?>
 
