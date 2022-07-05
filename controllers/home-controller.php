@@ -1,12 +1,10 @@
-<?php
-
-$_SESSION["POST"] = $_POST;
+<?php 
 
 
 $arrayFluxIndex = [
-    'Jeux Olympiques' => 0,
+    'Jeux olympiques' => 0,
     'Sports de combat' => 1,
-    'Sports us' => 2,
+    'Sports US' => 2,
     'Handball' =>3,
     'Volley' => 4
 ];

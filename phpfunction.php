@@ -23,17 +23,27 @@ if (isset($_GET["flux"])) {
 } else {
     $flux = recupXML($rssArray[0]);
 }
-
-
 ?>
 
+<?php require_once "./elements/meta.php"; ?>
+<?php require_once "./elements/navBar.php"; ?>
 
-<?php
-for ($i = 1; $i < $A; $i++) { ?>
-    <div class="rounded border border-secondary my-3 bg-light">
-        <img src="<?= $flux[$i]->enclosure['url'] ?>" alt="<?= $flux[$i]->enclosure['url'] ?>" class="imgSize my-2">
-        <p class="text-start px-1"><b><?= $flux[$i]->title ?></b></p>
-        <p class="text-start px-1"><?= strftime($date_format, strtotime($flux[$i]->pubDate)) ?></p>
-        <a href="<?= $flux[$i]->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u></a>
-    </div>
-<?php } ?>
+<body>
+
+    <?php
+    for ($i = 1; $i < $A; $i++) { ?>
+        <div class="rounded border border-secondary my-3 bg-light">
+            <img src="<?= $flux[$i]->enclosure['url'] ?>" alt="<?= $flux[$i]->enclosure['url'] ?>" class="imgSize my-2">
+            <p class="text-start px-1"><b><?= $flux[$i]->title ?></b></p>
+            <p class="text-start px-1"><?= strftime($date_format, strtotime($flux[$i]->pubDate)) ?></p>
+            <a href="<?= $flux[$i]->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u></a>
+        </div>
+    <?php } ?>
+
+
+    <?php require_once "../elements/footer.php" ?>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,4 +1,7 @@
 <?php
+
+require_once '../controllers/home-controller.php';
+
 session_start();
 
 $date_format = '%A %d %B %Y à %H:%M';
