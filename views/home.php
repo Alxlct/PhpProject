@@ -1,4 +1,9 @@
 <?php
+
+session_start();
+
+var_dump($_SESSION);
+
 $fluxRSS = "https://rmcsport.bfmtv.com/rss/jeux-olympiques/";
 
 function recupXML($url)
