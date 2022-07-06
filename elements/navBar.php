@@ -1,4 +1,4 @@
-<?php 
+<?php
 ?>
 
 
@@ -29,11 +29,12 @@ else {
           <a class="nav-link" href="../phpfunction.php?flux=2">Sports US</a>
         </li>
 
-        <?php } ?>  
+
+        <?php } ?>
       </ul>
       <ul class="navbar-nav fs-3">
         <li class="nav-item">
-          <a class="nav-link" href="parameters.php"><i class="bi bi-gear me-2 "></i>paramètres</a>
+          <a class="nav-link" href="../views/parameters.php"><i class="bi bi-gear me-2 "></i>paramètres</a>
         </li>
       </ul>
     </div>

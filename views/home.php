@@ -133,10 +133,10 @@ $flux3 = recupXML($rssArray[2]);
         </div>
     </div>
 
-
+    <div id="scroll_to_top">
+        <a href="#top"><img src="../assets/img/Arrow_top.png" alt="Retourner en haut" /></a>
+    </div>
     <?php require_once "../elements/footer.php" ?>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
-
-</html>

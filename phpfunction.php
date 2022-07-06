@@ -28,6 +28,7 @@ if (isset($_GET["flux"])) {
 <?php require_once "./elements/meta.php"; ?>
 <?php require_once "./elements/navBar.php"; ?>
 
+<<<<<<< HEAD
 <body>
 
     <?php
@@ -47,3 +48,14 @@ if (isset($_GET["flux"])) {
 </body>
 
 </html>
+=======
+<?php
+for ($i = 1; $i <= 20; $i++) { ?>
+    <div class="rounded border border-secondary my-3 bg-light">
+        <img src="<?= $flux[$i]->enclosure['url'] ?>" alt="<?= $flux[$i]->enclosure['url'] ?>" class="imgSize my-2">
+        <p class="text-start px-1"><b><?= $flux[$i]->title ?></b></p>
+        <p class="text-start px-1"><?= strftime($date_format, strtotime($flux[$i]->pubDate)) ?></p>
+        <a href="<?= $flux[$i]->link ?>" target="_blank" class="btn btn-success text-center mb-3"><u>Ouvrir l'article</u></a>
+    </div>
+<?php } ?>
+>>>>>>> 34b53f898cb35585f9a4b3b9853713b83e859ec2
