@@ -13,20 +13,23 @@
 if((!empty($_SESSION["POST"]['cat'])) && (count($_SESSION["POST"]['cat'])>0)) {
   foreach($_SESSION["POST"]['cat'] as $index => $value) { 
     echo '<li class="nav-item ms-4">
-    <a class="nav-link " href="../phpfunction.php?flux='.$arrayFluxIndex[$value].'">'.$value.'</a>
+    <a class="nav-link " href="../views/pages.php?flux='.$arrayFluxIndex[$value].'">'.$value.'</a>
   </li>';
  }
  }
 else {
   ?>
+   <li class="nav-item ms-4">
+            <a class="nav-link" href="../views/home.php"><i class="bi bi-house"> Accueil</i></a>
+          </li>
         <li class="nav-item ms-4">
-          <a class="nav-link " href="../phpfunction.php?flux=0">Jeux Olympiques</a>
+          <a class="nav-link " href="../views/pages.php?flux=0">Jeux Olympiques</a>
         </li>
         <li class="nav-item ms-4">
-          <a class="nav-link" href="../phpfunction.php?flux=1">Sports de combat</a>
+          <a class="nav-link" href="../views/pages.php?flux=1">Sports de combat</a>
         </li>
         <li class="nav-item ms-4">
-          <a class="nav-link" href="../phpfunction.php?flux=2">Sports US</a>
+          <a class="nav-link" href="../views/pages.php?flux=2">Sports US</a>
         </li>
 
 
