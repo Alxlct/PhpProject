@@ -10,3 +10,9 @@ $arrayFluxIndex = [
     'Handball' =>3,
     'Volley' => 4
 ];
+
+
+
+if(count($_SESSION['POST']['cat']) != 3){
+    echo "veuillez selectionner 3 cases";
+}

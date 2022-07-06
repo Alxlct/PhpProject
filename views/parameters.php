@@ -15,11 +15,14 @@ require_once '../controllers/parameters-controller.php';
         <form action="#" method="post">
             <div class="text-center fs-2">
                 <u>
-                    <p>Vos paramètres</p>
+                    <p class="bg-white border border-dark">Vos paramètres</p>
                 </u>
             </div>
+
             <div class="row justify-content-center m-0 p-0">
+
                 <div class="col-lg-2 m-3 border border-dark bg-light ">
+                    <p>cocher 3 cases</p>
                     <div class="form-check">
                         <input class="form-check-input myCheckbox" type="checkbox" value="Jeux Olympiques" id="check1" name="cat[]">
                         <label class="form-check-label" for="check1">
@@ -51,7 +54,10 @@ require_once '../controllers/parameters-controller.php';
                         </label>
                     </div>
                 </div>
+
+
                 <div class="col-lg-2 m-3 border border-dark bg-light">
+                    <p>cocher 1 cases</p>
                     <div class="form-check">
                         <input class="form-check-input " type="radio" value="2" id="num1" name="articles">
                         <label class="form-check-label" for="num1">
@@ -94,6 +100,7 @@ require_once '../controllers/parameters-controller.php';
                 if (onlyCheckedItems.length > 3) {
                     this.checked = false;
                 }
+
             });
         });
     </script>

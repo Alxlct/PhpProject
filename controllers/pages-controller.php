@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+
 
 $arrayFluxIndex = [
     'Jeux olympiques' => 0,

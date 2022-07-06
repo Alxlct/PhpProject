@@ -1,7 +1,7 @@
 <?php
 $date_format = '%A %d %B %Y à %H:%M';
 setlocale(LC_TIME, "fr_FR", "fra");
-$A = $_SESSION["POST"]['articles'];
+$A = 6;
 $rssArray = [
     "https://rmcsport.bfmtv.com/rss/jeux-olympiques/",
     "https://rmcsport.bfmtv.com/rss/sports-de-combat//",
@@ -23,7 +23,6 @@ if (isset($_GET["flux"])) {
 } else {
     $flux = recupXML($rssArray[0]);
 }
-
 
 ?>
 
@@ -57,3 +56,5 @@ if (isset($_GET["flux"])) {
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
+
+</html>

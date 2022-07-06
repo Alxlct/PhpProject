@@ -3,7 +3,6 @@
 require_once '../controllers/home-controller.php';
 
 session_start();
-
 $date_format = '%A %d %B %Y à %H:%M';
 setlocale(LC_TIME, "fr_FR", "fra");
 
@@ -14,8 +13,12 @@ $rssArray = [
     "https://rmcsport.bfmtv.com/rss/handball/",
     "https://rmcsport.bfmtv.com/rss/volley/"
 ];
+if (isset($_SESSION["POST"]['articles'])) {
+    $A = $_SESSION["POST"]['articles'];
+}else{
+    $A=2;
+};
 
-$A = $_SESSION["POST"]['articles'];
 
 function recupXML($url)
 {
@@ -95,6 +98,7 @@ $flux3 = recupXML($rssArray[2]);
             <div class="row m-0 p-0 justify-content-evenly">
                 <div class="col-lg-3 m-1 text-center">
                     <?php
+
                     for ($i = 1; $i <= $A; $i++) { ?>
                         <div class="rounded border border-secondary my-3 bg-light">
                             <img src="<?= $flux1[$i]->enclosure['url'] ?>" alt="<?= $flux1[$i]->enclosure['url'] ?>" class="imgSize my-2">

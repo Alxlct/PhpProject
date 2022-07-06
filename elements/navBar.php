@@ -19,7 +19,11 @@ $arrayFluxIndex = [
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-3">
         <?php
-        if ((!empty($_SESSION["POST"]['cat'])) && (count($_SESSION["POST"]['cat']) > 0)) {
+
+        if ((!empty($_SESSION["POST"]['cat'])) && (count($_SESSION["POST"]['cat']) == 3)) {
+          echo '<li class="nav-item ms-4">
+          <a class="nav-link" href="../views/home.php"><i class="bi bi-house"> Accueil</i></a>
+        </li>';
           foreach ($_SESSION["POST"]['cat'] as $index => $value) {
             echo '<li class="nav-item ms-4">
     <a class="nav-link " href="../views/pages.php?flux=' . $arrayFluxIndex[$value] . '">' . $value . '</a>
@@ -42,6 +46,7 @@ $arrayFluxIndex = [
 
 
         <?php } ?>
+        
       </ul>
       <ul class="navbar-nav fs-3">
         <li class="nav-item">

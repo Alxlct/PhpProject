@@ -1,1 +1,22 @@
+#--------------------------------------------------
+# Activation du module de réécriture d'URL
+#--------------------------------------------------
+RewriteEngine on
+
+
+
+#--------------------------------------------------
+# Règles de réécriture d'URL :
+#--------------------------------------------------
+RewriteRule ^jeux-olympiques$   /views/pages.php?flux=0 [L]
+RewriteRule ^Sports-de-combat$   /views/pages.php?flux=1 [L]
+RewriteRule ^Sports-us$   /views/pages.php?flux=2 [L]
+RewriteRule ^Handball$   /views/pages.php?flux=3 [L]
+RewriteRule ^Volley$   /views/pages.php?flux=4 [L]
+
+
+#--------------------------------------------------
+# Page erreur 404 perso 
+#--------------------------------------------------
 ErrorDocument 404 /error404.php
+
