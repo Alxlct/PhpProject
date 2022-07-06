@@ -1,7 +1,7 @@
 <?php
 $date_format = '%A %d %B %Y à %H:%M';
 setlocale(LC_TIME, "fr_FR", "fra");
-$A = 6;
+$A = $_SESSION["POST"]['articles'];
 $rssArray = [
     "https://rmcsport.bfmtv.com/rss/jeux-olympiques/",
     "https://rmcsport.bfmtv.com/rss/sports-de-combat//",
