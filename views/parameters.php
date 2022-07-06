@@ -53,19 +53,19 @@ require_once '../controllers/parameters-controller.php';
                 </div>
                 <div class="col-lg-2 m-3 border border-dark bg-light">
                     <div class="form-check">
-                        <input class="form-check-input " type="radio" value="6" id="num1" name="articles">
+                        <input class="form-check-input " type="radio" value="2" id="num1" name="articles">
                         <label class="form-check-label" for="num1">
                             6
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input " type="radio" value="9" id="num2" name="articles">
+                        <input class="form-check-input " type="radio" value="3" id="num2" name="articles">
                         <label class="form-check-label" for="num2">
                             9
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input " type="radio" value="12" id="num3" name="articles">
+                        <input class="form-check-input " type="radio" value="4" id="num3" name="articles">
                         <label class="form-check-label" for="num3">
                             12
                         </label>

@@ -1,4 +1,13 @@
 <?php
+
+$arrayFluxIndex = [
+  'Jeux Olympiques' => 0,
+  'Sports de combat' => 1,
+  'Sports us' => 2,
+  'Handball' => 3,
+  'Volley' => 4
+];
+
 ?>
 
 
@@ -9,28 +18,27 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-3">
-<?php 
-if((!empty($_SESSION["POST"]['cat'])) && (count($_SESSION["POST"]['cat'])>0)) {
-  foreach($_SESSION["POST"]['cat'] as $index => $value) { 
-    echo '<li class="nav-item ms-4">
-    <a class="nav-link " href="../views/pages.php?flux='.$arrayFluxIndex[$value].'">'.$value.'</a>
+        <?php
+        if ((!empty($_SESSION["POST"]['cat'])) && (count($_SESSION["POST"]['cat']) > 0)) {
+          foreach ($_SESSION["POST"]['cat'] as $index => $value) {
+            echo '<li class="nav-item ms-4">
+    <a class="nav-link " href="../views/pages.php?flux=' . $arrayFluxIndex[$value] . '">' . $value . '</a>
   </li>';
- }
- }
-else {
-  ?>
-   <li class="nav-item ms-4">
+          }
+        } else {
+        ?>
+          <li class="nav-item ms-4">
             <a class="nav-link" href="../views/home.php"><i class="bi bi-house"> Accueil</i></a>
           </li>
-        <li class="nav-item ms-4">
-          <a class="nav-link " href="../views/pages.php?flux=0">Jeux Olympiques</a>
-        </li>
-        <li class="nav-item ms-4">
-          <a class="nav-link" href="../views/pages.php?flux=1">Sports de combat</a>
-        </li>
-        <li class="nav-item ms-4">
-          <a class="nav-link" href="../views/pages.php?flux=2">Sports US</a>
-        </li>
+          <li class="nav-item ms-4">
+            <a class="nav-link " href="../views/pages.php?flux=0">Jeux Olympiques</a>
+          </li>
+          <li class="nav-item ms-4">
+            <a class="nav-link" href="../views/pages.php?flux=1">Sports de combat</a>
+          </li>
+          <li class="nav-item ms-4">
+            <a class="nav-link" href="../views/pages.php?flux=2">Sports US</a>
+          </li>
 
 
         <?php } ?>

@@ -15,7 +15,7 @@ $rssArray = [
     "https://rmcsport.bfmtv.com/rss/volley/"
 ];
 
-$A = 6;
+$A = $_SESSION["POST"]['articles'];
 
 function recupXML($url)
 {
@@ -95,7 +95,7 @@ $flux3 = recupXML($rssArray[2]);
             <div class="row m-0 p-0 justify-content-evenly">
                 <div class="col-lg-3 m-1 text-center">
                     <?php
-                    for ($i = 1; $i < $A; $i++) { ?>
+                    for ($i = 1; $i <= $A; $i++) { ?>
                         <div class="rounded border border-secondary my-3 bg-light">
                             <img src="<?= $flux1[$i]->enclosure['url'] ?>" alt="<?= $flux1[$i]->enclosure['url'] ?>" class="imgSize my-2">
                             <p class="text-start px-1"><b><?= $flux1[$i]->title ?></b></p>
@@ -107,7 +107,7 @@ $flux3 = recupXML($rssArray[2]);
 
                 <div class="col-lg-3 m-1 text-center">
                     <?php
-                    for ($i = 1; $i < $A; $i++) { ?>
+                    for ($i = 1; $i <= $A; $i++) { ?>
                         <div class="rounded border border-secondary bg-light my-3">
                             <img src="<?= $flux2[$i]->enclosure['url'] ?>" alt="<?= $flux2[$i]->enclosure['url'] ?>" class="imgSize my-2">
                             <p class="text-start px-1"><b><?= $flux2[$i]->title ?></b></p>
@@ -119,7 +119,7 @@ $flux3 = recupXML($rssArray[2]);
 
                 <div class="col-lg-3 m-1 text-center">
                     <?php
-                    for ($i = 1; $i < $A; $i++) { ?>
+                    for ($i = 1; $i <= $A; $i++) { ?>
                         <div class="rounded border border-secondary bg-light my-3">
                             <img src="<?= $flux3[$i]->enclosure['url'] ?>" alt="<?= $flux3[$i]->enclosure['url'] ?>" class="imgSize my-2">
                             <p class="text-start px-1"><b><?= $flux3[$i]->title ?></b></p>
