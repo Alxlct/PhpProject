@@ -23,7 +23,7 @@ require_once '../controllers/parameters-controller.php';
             <div class="row justify-content-center m-0 p-0">
 
                 <div class="col-lg-2 m-3 border border-dark bg-light ">
-                    <p>cocher 3 cases</p>
+                    <p>Cochez 3 cases</p>
                     <div class="form-check">
                         <input class="form-check-input myCheckbox" type="checkbox" value="Jeux Olympiques" id="check1" name="cat[]">
                         <label class="form-check-label" for="check1">
@@ -58,7 +58,7 @@ require_once '../controllers/parameters-controller.php';
 
 
                 <div class="col-lg-2 m-3 border border-dark bg-light">
-                    <p>cocher 1 cases</p>
+                    <p>Cochez 1 case</p>
                     <div class="form-check">
                         <input class="form-check-input " type="radio" value="2" id="num1" name="articles">
                         <label class="form-check-label" for="num1">
