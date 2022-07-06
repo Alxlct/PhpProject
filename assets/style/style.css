@@ -31,3 +31,7 @@ height: auto;
     background-size: cover;
     background-attachment: fixed;
   }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
