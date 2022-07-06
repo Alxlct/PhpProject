@@ -25,3 +25,9 @@ height: auto;
   #scroll_to_top img {
     width: 50px;
   }
+  .bg-settings {
+    background: url(../img/bgsettings.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
