@@ -5,6 +5,7 @@ session_start();
 require_once '../controllers/parameters-controller.php';
 ?>
 
+
 <?php include '../elements/meta.php' ?>
 <?php include '../elements/navBar.php' ?>
 
