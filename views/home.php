@@ -44,7 +44,7 @@ $flux3 = recupXML($rssArray[2]);
 
     <div class="bg-stadium row text-center justify-content-center p-0 m-0">
         <div class="col-lg-9">
-            <h1 class="text-center bg-light text-dark my-3 rounded shadow p-3 border border-dark">RsSport</h1>
+            <h1 class="text-center bg-light text-dark my-3 rounded shadow p-3 border border-dark"><img class="sizeImg" src="../assets/img/logo.png" alt="logo"> RsSport</h1>
         </div>
     </div>
     <div class="row p-0 m-0 justify-content-center">

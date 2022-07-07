@@ -35,3 +35,8 @@ height: auto;
   body {
     font-family: 'Poppins', sans-serif;
   }
+
+  .sizeImg {
+    width: 45px;
+    height: 45px;
+  }
